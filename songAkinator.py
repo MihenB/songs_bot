@@ -35,6 +35,10 @@ def akinate(noise, lemmatizer, vectorizer, clf, song):
 
 
 def learn():
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('omw-1.4')
+    nltk.download('wordnet')
     data = pd.read_csv('tcc_ceds_music.csv')
     columns = data[['genre', 'lyrics']]
     lowered = columns['lyrics'].str.lower()
